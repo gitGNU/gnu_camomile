@@ -1,0 +1,39 @@
+
+CGE readme 
+
+This file is part of CGE.
+
+Copyright (C) 2016 slughnaz
+
+CGE is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CGE is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+   
+You should have received a copy of the GNU General Public License
+along with CGE.  If not, see <http://www.gnu.org/licenses/>.
+
+--
+
+
+CGE - Camomile Game Engine
+
+Camomile Game Engine is a 3D graphic software game engine built in standard C.
+
+CGE has been developed mainly for educational purpose. It run most of its features in pure software implementation so that it can easily be run, studied and modified.
+
+CGE depend on SDL for interfacing with hardware.
+
+
+
+To run the program
+
+Exemple:
+$ ./CGE
+
+
