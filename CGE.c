@@ -230,6 +230,9 @@ float CGE_DegToRad(float);
 float CGE_V3Length(CGE_V3);
 float CGE_V4Length(CGE_V4);
 
+CGE_V4 CGE_PlaneEqn (CGE_V3, CGE_V3);
+float CGE_PlaneEqnResolve (CGE_V4, CGE_V3);
+
 CGE_V3 CGE_V3New(float, float, float);
 CGE_V4 CGE_V4New(float, float, float, float);
 
@@ -314,6 +317,29 @@ float CGE_V3Length(CGE_V3 v)
 float CGE_V4Length(CGE_V4 v)
 {
 	return sqrt((v.x * v.x) + (v.y * v.y) + (v.z * v.z) + (v.w * v.w));
+}
+
+CGE_V4 CGE_PlaneEqn (CGE_V3 p, CGE_V3 v)
+{
+	CGE_V4 newv;
+
+	/* a(x - x1) + b(y - y1) + c(z - z1) = 0 */
+	/* v.x(x - p.x) + v.y(y - p.y) + v.z(z - p.z) = 0  */
+
+	newv.x = v.x;
+	newv.y = v.y;
+	newv.z = v.z;
+	newv.w =  (v.x * -p.x) + (v.y * -p.y) + (v.z * -p.z);
+
+	return newv;
+}
+
+float CGE_PlaneEqnResolve (CGE_V4 eqn, CGE_V3 p)
+{
+	/* ax + by + cz + d = 0 */
+	/* eqn.x * p.x + eqn.y * p.y + eqn.z * p.z + eqn.w = 0 */
+
+	return (eqn.x * p.x) + (eqn.y * p.y) + (eqn.z * p.z) + eqn.w;
 }
 
 CGE_V3 CGE_V3New(float x, float y, float z)
